@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import { withLayout } from 'layout/Layout';
 import { useState } from 'react';
-import { Button, Htag, P, Rating, Tag } from '../../components';
+import { Button, Htag, P, Rating, Tag } from 'components';
 import axios from 'axios';
 import { MenuItem } from 'interfaces/menu.interface';
 
