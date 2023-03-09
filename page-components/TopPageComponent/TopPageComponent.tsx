@@ -22,8 +22,8 @@ export const TopPageComponent = ({
     };
 
     useEffect(() => {
-		dispathSort({ type: 'reset', initialState: products });
-	}, [products]);
+        dispathSort({ type: 'reset', initialState: products });
+    }, [products]);
 
     return (
         <div className={styles.wrapper}>
@@ -38,7 +38,9 @@ export const TopPageComponent = ({
             </div>
             <div>
                 {sortedProducts &&
-                    sortedProducts.map((p) => (<Product key={p._id} product={p} />))}
+                    sortedProducts.map((p) => (
+                        <Product layout key={p._id} product={p} />
+                    ))}
             </div>
             <div className={styles.hhTitle}>
                 <Htag tag="h2">Вакансии - {page.category}</Htag>
@@ -51,7 +53,7 @@ export const TopPageComponent = ({
             )}
             {page.advantages && page.advantages.length > 0 && (
                 <>
-                    <Htag tag="h2">Преимущства</Htag>
+                    <Htag tag="h2">Преимущества</Htag>
                     <Advantages advantages={page.advantages} />
                 </>
             )}

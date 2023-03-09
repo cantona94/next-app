@@ -6,7 +6,7 @@ import axios from 'axios';
 import { MenuItem } from 'interfaces/menu.interface';
 import { API } from '../../helpers/api';
 
-function Home({menu}:HomeProps): JSX.Element {
+function Home({ menu }: HomeProps): JSX.Element {
     const [rating, setRating] = useState<number>(3);
 
     return (
@@ -15,7 +15,7 @@ function Home({menu}:HomeProps): JSX.Element {
             <Button appearance="primary" arrow="down">
                 Кнопка
             </Button>
-            <Button appearance="gnost" arrow="right">
+            <Button appearance="ghost" arrow="right">
                 Кнопка
             </Button>
             <P size="l">Большой</P>
@@ -26,9 +26,9 @@ function Home({menu}:HomeProps): JSX.Element {
             <Tag size="m" color="green">
                 Текст
             </Tag>
-            <Rating rating={rating} isEditable setRating={setRating} /> 
-            <Input placeholder='тест' />    
-            <Textarea placeholder='тест area' />  
+            <Rating rating={rating} isEditable setRating={setRating} />
+            <Input placeholder="тест" />
+            <Textarea placeholder="тест area" />
         </>
     );
 }
@@ -38,17 +38,17 @@ export default withLayout(Home);
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
     const firstCategory = 0;
     const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
-        firstCategory
+        firstCategory,
     });
-	return {
-		props: {
-			menu,
-			firstCategory
-		}
-	};
+    return {
+        props: {
+            menu,
+            firstCategory,
+        },
+    };
 };
 
-interface HomeProps extends Record<string, unknown>{
-	menu: MenuItem[];
-	firstCategory: number;
+interface HomeProps extends Record<string, unknown> {
+    menu: MenuItem[];
+    firstCategory: number;
 }
