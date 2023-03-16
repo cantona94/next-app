@@ -19,11 +19,20 @@ a {
 	box-sizing: border-box;
 }
 
+.visualyHidden {
+	position: absolute;
+
+	overflow: hidden;
+
+	width: 0;
+	height: 0;
+}
+
 :root {
 	--black: #3B434E;
 	--gray-light: #EBEBEB;
 	--gray: #A4A4A4;
-	--gray-dark: #787D85;
+	--gray-dark: #6C7077;
 	--white: white;
 	--primary: #7351F5;
 	--primary-hover: #6344DF;
